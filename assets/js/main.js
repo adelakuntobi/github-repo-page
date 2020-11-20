@@ -52,7 +52,7 @@ const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
   "Content-Type": "application/json",
-  "Authorization": "Bearer 0ebc8ad1dc2da926d1612d234fcf968a18e69f05"
+  "Authorization": "Bearer b8e289eab021ceb3606b3621551a8de55bed6956"
 }
 
 
