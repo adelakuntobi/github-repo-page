@@ -21,7 +21,7 @@ const body = {
               __typename
             }
             name
-            description
+            description,
             forkCount
             updatedAt
             isFork
