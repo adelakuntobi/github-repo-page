@@ -1,6 +1,6 @@
 const myGithubData = {
   "username": "adelakuntobi",
-  "token": "c797a3af7403b3b6c99a8c78b4fc8e033e09091a"
+  "token": "99f1ade9a7e503561d81306bbb1e8838266a0530"
 }
 
 const body = {
