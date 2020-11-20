@@ -211,6 +211,9 @@ main {
   .other-section {
     width: 100%;
     padding: 0 1rem;
+    ul{
+      overflow-x: scroll;
+    }
     .search-section {
       display: flex;
       align-items: center;
@@ -336,7 +339,7 @@ main {
     }
     .first-section {
       padding: 0;
-      margin-bottom: 1.7x5rem;
+      margin-bottom: 1.75rem;
     }
     .flex {
       display: flex;
@@ -345,17 +348,20 @@ main {
       img {
         width: 16.666667% !important;
         height: auto !important;
-        margin-right: .5rem;
+        margin-right: 1.5rem;
       }
       section {
         width: 83.33333%;
+        h1{
+          margin: 0;
+        }
       }
     }
     .search-section {
       flex-direction: column;
       section {
         width: 100%;
-        margin: 1rem 0;
+        margin: 1rem;
         select{
           margin-right: 1rem;
           margin-left: 0 !important;

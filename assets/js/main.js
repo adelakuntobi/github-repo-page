@@ -1,6 +1,6 @@
 const myGithubData = {
   "username": "adelakuntobi",
-  "token": "3b1056fe51256f47665870892fc8b13b51a1393a"
+  "token": "c797a3af7403b3b6c99a8c78b4fc8e033e09091a"
 }
 
 const body = {
@@ -79,7 +79,7 @@ fetch(baseUrl, {
     document.querySelector("#avatar").src = data.avatarUrl
     owner = `
     <section class="flex">
-      <img class="profile-avatar" src="https://avatars1.githubusercontent.com/u/42492876?v=4" />
+      <img class="profile-avatar" src="${data.avatarUrl}" />
       <section>
         <h1>${data.name}</h1>
         <p>${data.login}</p>

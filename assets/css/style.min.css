@@ -245,6 +245,10 @@ main .other-section {
   padding: 0 1rem;
 }
 
+main .other-section ul {
+  overflow-x: scroll;
+}
+
 main .other-section .search-section {
   display: flex;
   align-items: center;
@@ -385,7 +389,7 @@ main .repo button {
   }
   main .first-section {
     padding: 0;
-    margin-bottom: 1.7x5rem;
+    margin-bottom: 1.75rem;
   }
   main .flex {
     display: flex;
@@ -395,17 +399,20 @@ main .repo button {
   main .flex img {
     width: 16.666667% !important;
     height: auto !important;
-    margin-right: .5rem;
+    margin-right: 1.5rem;
   }
   main .flex section {
     width: 83.33333%;
+  }
+  main .flex section h1 {
+    margin: 0;
   }
   main .search-section {
     flex-direction: column;
   }
   main .search-section section {
     width: 100%;
-    margin: 1rem 0;
+    margin: 1rem;
   }
   main .search-section section select {
     margin-right: 1rem;
