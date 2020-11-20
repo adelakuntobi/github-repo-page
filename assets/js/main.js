@@ -1,8 +1,3 @@
-const myGithubData = {
-  "username": "adelakuntobi",
-  "token": "c797a3af7403b3b6c99a8c78b4fc8e033e09091a"
-}
-
 const body = {
   "query": `
     query{
@@ -48,7 +43,8 @@ const body = {
           }
         }
       }
-    } 
+    }
+   
   `
 }
 
@@ -56,7 +52,7 @@ const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
   "Content-Type": "application/json",
-  "Authorization": "bearer " + myGithubData["token"]
+  "Authorization": "Bearer 0ebc8ad1dc2da926d1612d234fcf968a18e69f05"
 }
 
 

@@ -211,9 +211,6 @@ main {
   .other-section {
     width: 100%;
     padding: 0 1rem;
-    ul{
-      overflow-x: scroll;
-    }
     .search-section {
       display: flex;
       align-items: center;
@@ -336,6 +333,9 @@ main {
     padding: 0 16px;
     .other-section {
       padding: 0;
+      ul {
+        overflow-x: scroll;
+      }
     }
     .first-section {
       padding: 0;
@@ -352,7 +352,7 @@ main {
       }
       section {
         width: 83.33333%;
-        h1{
+        h1 {
           margin: 0;
         }
       }
@@ -362,7 +362,7 @@ main {
       section {
         width: 100%;
         margin: 1rem;
-        select{
+        select {
           margin-right: 1rem;
           margin-left: 0 !important;
         }

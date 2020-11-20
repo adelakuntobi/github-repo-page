@@ -245,10 +245,6 @@ main .other-section {
   padding: 0 1rem;
 }
 
-main .other-section ul {
-  overflow-x: scroll;
-}
-
 main .other-section .search-section {
   display: flex;
   align-items: center;
@@ -386,6 +382,9 @@ main .repo button {
   }
   main .other-section {
     padding: 0;
+  }
+  main .other-section ul {
+    overflow-x: scroll;
   }
   main .first-section {
     padding: 0;
