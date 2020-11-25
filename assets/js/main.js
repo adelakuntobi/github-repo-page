@@ -49,9 +49,9 @@ const body = {
 }
 
 const baseUrl = "https://api.github.com/graphql";
-// const token = `${secrets.GITHUB_TOKEN}`;
+const token = `${secrets.TOKEN}`;
 
-const token = '';
+// const token = '';
 
 const headers = {
   "Content-Type": "application/json",
