@@ -49,7 +49,7 @@ const body = {
 }
 
 const baseUrl = "https://api.github.com/graphql";
-const token = `${secrets.TOKEN}`;
+const token = `${Secrets.TOKEN}`;
 
 // const token = '';
 
