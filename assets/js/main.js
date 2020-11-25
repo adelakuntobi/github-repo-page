@@ -49,7 +49,11 @@ const body = {
 }
 
 const baseUrl = "https://api.github.com/graphql";
+<<<<<<< HEAD
 const token = '';
+=======
+const token = `${Secrets.TOKEN}`;
+>>>>>>> 7de073964efea8feec67efa27fc29271e2fd4a8f
 
 
 const headers = {
