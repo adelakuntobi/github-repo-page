@@ -19,7 +19,7 @@
 <body>
   <nav>
     <section class="container">
-      <i class="fa fa-2x fa-bars"></i>
+      <i style="cursor: pointer;" id="hamburger" class="fa fa-2x fa-bars"></i>
       <div class="nav-list ">
         <a href="https://www.github.com">
           <i class="fab fa-github"></i>
@@ -48,6 +48,28 @@
       </div>
     </section>
   </nav>
+  <div id="dropdown" class="nav-dropdown-details">
+    <div class="input-div">
+      <input type="search" placeholder="Search or jump to..." />
+      <span>/</span>
+    </div>
+    <ul>
+      <li>Dashboard</li>
+      <li>Pull requests</li>
+      <li>Issues</li>
+      <li>Marketplace</li>
+      <li>Explore</li>
+      <li>Settings</li>
+      <li>
+        <img src="" id="avatar" />
+       <span id="name"></span>
+      </li>
+      <li>
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Sign Out</span>
+      </li>
+    </ul>
+  </div>
   <main>
     <section class="first-section">
 

@@ -49,11 +49,7 @@ const body = {
 }
 
 const baseUrl = "https://api.github.com/graphql";
-<<<<<<< HEAD
-const token = '';
-=======
-const token = `${Secrets.TOKEN}`;
->>>>>>> 7de073964efea8feec67efa27fc29271e2fd4a8f
+
 
 
 const headers = {
@@ -65,6 +61,22 @@ const headers = {
 const container = document.querySelector("#container");
 const container1 = document.querySelector(".first-section");
 const isStar = 0
+
+document.getElementById("hamburger").addEventListener("click", function () {
+  if (document.getElementById("dropdown").style.display == "block") {
+    document.getElementById("dropdown").style.display = "none"
+  }
+  else {
+    document.getElementById("dropdown").style.display = "block"
+  }
+})
+
+function checkWidth() {
+   if(screen.width >= 800){
+    document.getElementById("dropdown").style.display = "none"
+  }
+}
+// checkWidth()
 
 // Fetch Data
 fetch(baseUrl, {
@@ -78,7 +90,11 @@ fetch(baseUrl, {
     var data = data.data.user
     console.log(data)
 
-    document.querySelector("#avatar").src = data.avatarUrl
+    document.querySelectorAll("#avatar")[0].src = data.avatarUrl
+    document.querySelectorAll("#avatar")[1].src = data.avatarUrl
+    document.querySelector("#name").innerHTML = data.login
+
+
     owner = `
     <section class="flex">
       <img class="profile-avatar" src="${data.avatarUrl}" />
@@ -87,7 +103,11 @@ fetch(baseUrl, {
         <p>${data.login}</p>
       </section>
     </section>
-    <button>Edit profile</button>
+    <div class="input-div-status">
+      <i class="far fa-smile"></i>
+      <input type="text" placeholder="Set status" />
+    </div>
+    <button class="edit-btn">Edit profile</button>
 
     <ul>
       <li>
@@ -160,31 +180,31 @@ fetch(baseUrl, {
 
 
 
-  const getInterval = (updatedTimeStamp, format) => {
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
-  
-    const timeParam = { second, minute, hour, day };
-    return Math.floor(updatedTimeStamp / timeParam[format]);
+const getInterval = (updatedTimeStamp, format) => {
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  const timeParam = { second, minute, hour, day };
+  return Math.floor(updatedTimeStamp / timeParam[format]);
+}
+
+const formatTimeUpdated = (date) => {
+  const updatedDate = Date.parse(date);
+  const modifiedUpdate = (new Date(updatedDate)).toDateString()
+  const daysInterval = getInterval(Date.now() - updatedDate, "day");
+  if (daysInterval >= 30) {
+    const [_, month, day, year] = /\s(\w{3})\s(\d{2})\s(\w{4})/.exec(modifiedUpdate);
+    return `on ${parseInt(day)} ${month} ${(new Date()).getFullYear() === +year ? "" : year}`
   }
-  
-  const formatTimeUpdated = (date) => {
-    const updatedDate = Date.parse(date);
-    const modifiedUpdate = (new Date(updatedDate)).toDateString()
-    const daysInterval = getInterval(Date.now() - updatedDate, "day");
-    if(daysInterval >= 30){
-      const [_, month, day, year] = /\s(\w{3})\s(\d{2})\s(\w{4})/.exec(modifiedUpdate);
-      return `on ${parseInt(day)} ${month} ${(new Date()).getFullYear() === +year ? "" : year}`
-    }
-    else{
-      let formats = ["day", "hour", "minute", "second"];
-      const lastUpdated = formats.map(format =>{
-        const when = getInterval(Date.now() - updatedDate, format)
-        return `${when} ${when > 1 ? `${format}s`: format} ago`;
-      })
-        .filter( value => parseInt(value) !== 0)
-      return lastUpdated[0];
-    }
+  else {
+    let formats = ["day", "hour", "minute", "second"];
+    const lastUpdated = formats.map(format => {
+      const when = getInterval(Date.now() - updatedDate, format)
+      return `${when} ${when > 1 ? `${format}s` : format} ago`;
+    })
+      .filter(value => parseInt(value) !== 0)
+    return lastUpdated[0];
   }
+}
